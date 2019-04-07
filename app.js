@@ -12,7 +12,8 @@ mongoose.connect(keys.mongoURI)
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error(err))
 
-
+const app = express();
+app.use(bodyParser.json());
 
 
 
