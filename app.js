@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 app.use('/api/post', postRouter);
 app.use(express.static(clientPath));
 
-
+app.listen(port, () => {
+    console.log(`Сервез запущен на порте ${port}`);
+    
+});
 
 
