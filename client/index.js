@@ -21,6 +21,28 @@ let posts = [];
 let modal;
 const BASE_URL = "/api/post";
 
+class postApi {
+  static fetch() {
+    return fetch(BASE_URL, { method: "get" }).then(res => res.json());
+  }
+
+  static create(post) {
+    return fetch(BASE_URL, {
+        method: "post",
+        body: JSON.stringify(post),
+        headers: {
+            'Accept': "application/json",
+            'Content-Type': "application/json"
+        }
+    }).then(res => res.json());
+  }
+
+  static remove(id) {
+    return fetch(`${BASE_URL}/${id}`, {
+        method: 'delete'
+    }).then(res => res.json());
+  }
+}
 
 
 
