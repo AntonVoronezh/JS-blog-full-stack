@@ -55,7 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
  document.querySelector('#posts').addEventListener('click', onDeletePost);
 });
 
+function renderPosts(_posts = []) {
+  const $posts = document.querySelector("#posts");
 
+  if (_posts.length > 0) {
+    $posts.innerHTML = _posts.map(post => card(post)).join(" ");
+  } else {
+    $posts.innerHTML = `<div class="center">Постов пока нет</div>`;
+  }
+}
 
 
 
