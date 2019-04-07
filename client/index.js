@@ -44,7 +44,16 @@ class postApi {
   }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  postApi.fetch().then(backendPosts => {
+    posts = backendPosts.concat();
+      renderPosts(posts);
+  });
 
+ modal = M.Modal.init(document.querySelector('.modal'));
+ document.querySelector('#createPost').addEventListener('click', onCreatePost);
+ document.querySelector('#posts').addEventListener('click', onDeletePost);
+});
 
 
 
