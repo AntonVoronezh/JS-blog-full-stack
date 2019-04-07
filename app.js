@@ -14,7 +14,8 @@ mongoose.connect(keys.mongoURI)
 
 const app = express();
 app.use(bodyParser.json());
-
+app.use('/api/post', postRouter);
+app.use(express.static(clientPath));
 
 
 
