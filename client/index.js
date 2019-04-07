@@ -88,4 +88,20 @@ function onCreatePost() {
     }
 }
 
+function onDeletePost(event) {
+    
+    if(event.target.classList.contains('js-remove')) {
+        const decision = confirm('Вы уверены что хотите удалить пост?');
+
+        if(decision) {
+            const id = event.target.getAttribute('data-id');
+
+            postApi.remove(id).then(() => {
+                const postIndex = posts.findIndex(post => post._id === id);
+                posts.splice(postIndex, 1);
+                renderPosts(posts);
+            })
+        }
+    }
+}
 
