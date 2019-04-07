@@ -65,5 +65,27 @@ function renderPosts(_posts = []) {
   }
 }
 
+function onCreatePost() {
+    const $title = document.querySelector('#title');
+    const $text = document.querySelector('#text');
+
+    if($title.value && $text.value) {
+        const newPost = {
+            title: $title.value,
+            text: $text.value
+        }
+
+        postApi.create(newPost).then(post => {
+            posts.push(post);
+            renderPosts(posts);
+        })
+
+        modal.close();
+        $title.value = '';
+        $text.value = '';
+
+        M.updateTextFields();
+    }
+}
 
 

@@ -1,0 +1,32 @@
+{
+  "name": "js-blog-full-stack",
+  "version": "1.0.0",
+  "description": "js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonVoronezh/JS-blog-full-stack.git"
+  },
+  "keywords": [
+    "blog",
+    "nodejs"
+  ],
+  "author": "AntonVoronezh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonVoronezh/JS-blog-full-stack/issues"
+  },
+  "homepage": "https://github.com/AntonVoronezh/JS-blog-full-stack#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.22"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
