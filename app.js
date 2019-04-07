@@ -5,7 +5,8 @@ const postRouter = require('./routes/post');
 const path = require('path'); 
 const keys = require('./keys'); 
 
-
+const port = process.env.PORT || 5000;
+const clientPath = path.join(__dirname, 'client');
 
 
 
