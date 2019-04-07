@@ -8,5 +8,18 @@ router.get("/", async (req, res) => {
   res.status(200).json(posts);
 });
 
+// http://localhost:5000/api/post  (POST)
+router.post("/", async (req, res) => {
+  const postData = {
+    title: req.body.title,
+    text: req.body.text
+  };
+
+  const post = new Post(postData);
+
+  await post.save();
+
+  res.status(201).json(post);
+});
 
 
