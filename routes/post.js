@@ -22,4 +22,12 @@ router.post("/", async (req, res) => {
   res.status(201).json(post);
 });
 
+// http://localhost:5000/api/post  (DELETE)
+router.delete("/:postId", async (req, res) => {
+  await Post.remove({_id: req.params.postId});
+  res.status(200).json({
+      message: 'удалено'
+  });
+});
 
+module.exports = router;
